@@ -22,7 +22,7 @@ require 'components/header.php';
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            text-align: left;
         }
         h1 {
             color: #333;
