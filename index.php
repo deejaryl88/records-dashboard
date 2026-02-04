@@ -4,12 +4,14 @@ $title = "Login";
 require 'components/header.php';
 ?>
 	<link rel="stylesheet" href="styles/index.css">
-	</head>
+</head>
+
 <body>
 	<form action="backend/process_login.php" method="POST">
+		<div id="error-message"><?php if (isset($_GET['error'])) { echo htmlspecialchars($_GET['error']); } ?></div>
 		<div>
 			<label for="email">Enter your email</label>
-			<input type="email" id="emailInput" name="emailInput">
+			<input type="email" id="emailInput" name="emailInput" value="<?php echo htmlspecialchars($_GET['email'] ?? ''); ?>">
 		</div>
 		<div>
 			<div class="password-label-container">
