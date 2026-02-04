@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require 'db/db_conn.php';
+$title = "Login";
+require 'components/header.php';
+?>
 
-<head>
-	<title>Login</title>
 	<style>
 		body {
 			display: flex;
@@ -65,8 +66,7 @@
 			box-sizing: border-box;
 		}
 	</style>
-</head>
-
+	</head>
 <body>
 	<form action="backend/process_login.php" method="POST">
 		<div>
