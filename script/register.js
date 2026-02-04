@@ -1,17 +1,3 @@
-function togglePassword() {
-
-	var passInput = document.getElementById("passwordInput");
-	var passIcon = document.getElementById("pass_visibility");
-	if (passInput.type === "password") {
-		passInput.type = "text";
-		passIcon.innerHTML = "️❌"
-	} else {
-		passInput.type = "password";
-		passIcon.innerHTML = "👁️"
-	}
-
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form');
     const errorMessage = document.getElementById('error-message');
@@ -22,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formData = new FormData(form);
 
-        fetch('backend/process_login.php', {
+        fetch('backend/process_register.php', {
             method: 'POST',
             body: formData,
             headers: {
@@ -32,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                window.location.href = 'dashboard.php';
+                window.location.href = 'index.php';
             } else {
                 errorMessage.textContent = data.message;
             }

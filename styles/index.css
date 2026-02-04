@@ -17,6 +17,12 @@ div {
 	margin-bottom: 20px;
 }
 		
+#error-message {
+	color: red;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+		
 .password-label-container {
 	display: flex;
 	justify-content: space-between;
