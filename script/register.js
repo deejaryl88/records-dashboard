@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                window.location.href = 'index.php';
+                window.location.href = 'register_success.php';
             } else {
                 errorMessage.textContent = data.message;
             }
