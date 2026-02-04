@@ -19,9 +19,7 @@ div {
 	margin-bottom: 20px;
 }
 		
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+#nameInput, #emailInput, #passwordInput, #confirm_passwordInput {
 	width: 100%;
 	padding: 10px;
 	border: 1px solid #ddd;
@@ -30,7 +28,7 @@ input[type="password"] {
 	box-sizing: border-box;
 }
 		
-button, a {
+#register_button, #login_link {
 	width: 100%;
 	padding: 10px;
 	margin-top: 10px;

@@ -3,7 +3,6 @@ require 'db/db_conn.php';
 $title = "Register";
 require 'components/header.php';
 ?>
-
 	<link rel="stylesheet" href="styles/register.css">
 </head>
 
@@ -26,8 +25,8 @@ require 'components/header.php';
 			<label for="confirm_password">Re-enter your password</label>
 			<input type="password" id="confirm_passwordInput" name="confirm_passwordInput">
 		</div>
-		<button type="submit">Register</button>
-		<a href="index.php">Login</a>
+		<button type="submit" id = "register_button">Register</button>
+		<a href="index.php" id="login_link">Login</a>
 	</form>
 
 </body>
