@@ -20,17 +20,9 @@ require 'components/header.php';
             <p><strong>Account Created:</strong> <?php echo htmlspecialchars($_SESSION['user_data']['created_at'] ?? 'N/A'); ?></p>
         </div>
         
-        <div class="actions">
-            <form action="create_record.php" method="POST" style="display:inline-block;">
-                <button type="submit" class="create-btn">Create</button>
-            </form>
-            <form action="view_records.php" method="POST" style="display:inline-block;">
-                <button type="submit" class="view-btn">View Records</button>
-            </form>
-            <form action="backend/process_logout.php" method="POST" style="display:inline-block;">
-                <button type="submit" class="logout-btn">Logout</button>
-            </form>
-        </div>
+        <form action="backend/process_logout.php" method="POST">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
     </div>
 </body>
 </html>
