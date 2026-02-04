@@ -6,7 +6,6 @@ $title = "Dashboard";
 require 'components/header.php';
 ?>
     <link rel="stylesheet" href="styles/dashboard.css">
-    
 </head>
 <body>
     <div class="container">
