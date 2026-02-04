@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+td {
+padding: 20px;
+border: 1px solid #ccc;
+}
+
+label {
+font-weight: bold;
+font-size: 18px;
+}
+
+#title_entry, #description_entry, #name_entry, #recorder_id_entry {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#save_button, #cancel_link {
+    padding: 12px 24px;
+    font-size: 16px;
+    margin-right: 10px;
+}
