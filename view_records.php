@@ -19,7 +19,7 @@ require 'components/header.php';
                 'SELECT r.id, r.title, r.description, r.name, r.recorder_id, u.created_at AS registered_at'
                 . ' FROM records r'
                 . ' LEFT JOIN users u ON r.recorder_id = u.id'
-                . ' ORDER BY r.id DESC'
+                . ' ORDER BY r.id ASC'
             );
             $records = $stmt->fetchAll();
         } catch (Exception $e) {
@@ -39,6 +39,8 @@ require 'components/header.php';
                         <th>Name</th>
                         <th>Recorder ID</th>
                         <th>Created At</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,6 +52,8 @@ require 'components/header.php';
                             <td><?php echo htmlspecialchars($row['name']); ?></td>
                             <td><?php echo htmlspecialchars($row['recorder_id']); ?></td>
                             <td><?php echo htmlspecialchars($row['registered_at'] ?? 'N/A'); ?></td>
+                            <td><button id = "update_button"> Update </button></td>
+                            <td><button id = "delete_button"> Delete </button></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
