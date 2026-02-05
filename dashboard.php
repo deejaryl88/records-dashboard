@@ -26,6 +26,9 @@ require 'components/header.php';
             <form action="view_records.php" method="GET" >
                 <button type="submit" id = "view_records_button">View Records</button>
             </form>
+            <form action="recycle_bin.php" method="GET" >
+                <button type="submit" id = "recycle_bin_button">Recycle Bin</button>
+            </form>
             <form action="backend/process_logout.php" method="POST">
                 <button type="submit" id = "logout_button">Logout</button>
             </form>

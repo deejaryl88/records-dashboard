@@ -53,7 +53,7 @@ h1 {
 	margin: 0;
 }
 
-#create_button, #view_records_button, #logout_button {
+#create_button, #view_records_button, #recycle_bin_button, #logout_button {
 	width: 100%;
 	padding: 10px;
 	background: #667eea;
@@ -63,8 +63,9 @@ h1 {
 	cursor: pointer;
 	font-size: 14px;
 	box-sizing: border-box;
+	transition: background 0.3s ease;
 }
 
-#create_button:hover, #view_records_button:hover, #logout_button:hover {
+#create_button:hover, #view_records_button:hover, #recycle_bin_button:hover, #logout_button:hover {
 	background: #764ba2;
 }
