@@ -1,6 +1,10 @@
 <?php
 require 'db/db_conn.php';
 require 'backend/session_validator.php';
+
+$name = $_SESSION['user_data']['name'] ?? '';
+$next_recorder_id = $_SESSION['user_id'];
+
 $title = "Create Record";
 require 'components/header.php';
 ?>
@@ -29,7 +33,7 @@ require 'components/header.php';
                 </tr>
                 <tr>
                     <td><label>Recorder ID</label></td>
-                    <td><input readonly type="text" name="recorder_idInput" id = "recorder_id_entry" value="<?php echo htmlspecialchars($_SESSION['user_data']['id'] ?? ''); ?>" ></td>
+                    <td><input readonly type="text" name="recorder_idInput" id = "recorder_id_entry" value="<?php echo htmlspecialchars($next_recorder_id); ?>" ></td>
                 </tr>
                 <tr>
                     <td>
