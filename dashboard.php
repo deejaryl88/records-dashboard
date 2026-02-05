@@ -20,14 +20,14 @@ require 'components/header.php';
         </div>
         
         <div class="actions">
-            <form action="create_record.php" method="GET" style="display:inline-block; margin-right:8px;">
-                <button type="submit" class="logout-btn">Create</button>
+            <form action="create_record.php" method="GET">
+                <button type="submit" id = "create_button">Create</button>
             </form>
-            <form action="view_records.php" method="GET" style="display:inline-block; margin-right:8px;">
-                <button type="submit" class="logout-btn">View Records</button>
+            <form action="view_records.php" method="GET" >
+                <button type="submit" id = "view_records_button">View Records</button>
             </form>
-            <form action="backend/process_logout.php" method="POST" style="display:inline-block;">
-                <button type="submit" class="logout-btn">Logout</button>
+            <form action="backend/process_logout.php" method="POST">
+                <button type="submit" id = "logout_button">Logout</button>
             </form>
         </div>
     </div>

@@ -1,50 +1,70 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	font-family: Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .container {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
+	background: white;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 400px;
 }
 
 h1 {
-    color: #333;
+	color: #333;
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-size: 28px;
 }
-        
+
 .welcome-message {
-    font-size: 24px;
-    color: #667eea;
-    margin: 20px 0;
+	font-size: 16px;
+	color: #666;
+	margin: 15px 0;
 }
 
 .user-info {
-    margin-top: 30px;
-    text-align: left;
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
+	margin: 20px 0;
+	padding: 15px;
+	background: #f5f5f5;
+	border-radius: 4px;
+	font-size: 14px;
 }
 
-.logout-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #667eea;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+.user-info p {
+	margin: 8px 0;
 }
 
-.logout-btn:hover {
-    background: #764ba2;
+.actions {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 20px;
+}
+
+.actions form {
+	margin: 0;
+}
+
+#create_button, #view_records_button, #logout_button {
+	width: 100%;
+	padding: 10px;
+	background: #667eea;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+#create_button:hover, #view_records_button:hover, #logout_button:hover {
+	background: #764ba2;
 }
