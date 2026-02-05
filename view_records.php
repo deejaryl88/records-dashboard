@@ -19,7 +19,7 @@ require 'components/header.php';
                 'SELECT r.id, r.title, r.description, r.name, r.recorder_id, u.created_at AS registered_at'
                 . ' FROM records r'
                 . ' LEFT JOIN users u ON r.recorder_id = u.id'
-                . ' ORDER BY r.id DESC'
+                . ' ORDER BY r.id ASC'
             );
             $records = $stmt->fetchAll();
         } catch (Exception $e) {
