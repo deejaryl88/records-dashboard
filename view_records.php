@@ -52,7 +52,7 @@ require 'components/header.php';
                             <td><?php echo htmlspecialchars($row['name']); ?></td>
                             <td><?php echo htmlspecialchars($row['recorder_id']); ?></td>
                             <td><?php echo htmlspecialchars($row['registered_at'] ?? 'N/A'); ?></td>
-                            <td><button id = "update_button"> Update </button></td>
+                            <td><a href="update.php?id=<?php echo htmlspecialchars($row['id']); ?>"><button type="button" id = "update_button"> Update </button></a></td>
                             <td><button id = "delete_button"> Delete </button></td>
                         </tr>
                     <?php endforeach; ?>
