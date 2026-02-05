@@ -39,6 +39,8 @@ require 'components/header.php';
                         <th>Name</th>
                         <th>Recorder ID</th>
                         <th>Created At</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,6 +52,8 @@ require 'components/header.php';
                             <td><?php echo htmlspecialchars($row['name']); ?></td>
                             <td><?php echo htmlspecialchars($row['recorder_id']); ?></td>
                             <td><?php echo htmlspecialchars($row['registered_at'] ?? 'N/A'); ?></td>
+                            <td><button id = "update_button"> Update </button></td>
+                            <td><button id = "delete_button"> Delete </button></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

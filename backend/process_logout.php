@@ -1,8 +1,9 @@
 <?php
 
 session_start();
-require '../db/db_conn.php';
 session_destroy();
+session_unset();
 header('Location: ../index.php');
 
 
+    
