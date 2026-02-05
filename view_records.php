@@ -60,7 +60,7 @@ require 'components/header.php';
                             <td><?php echo htmlspecialchars($row['name']); ?></td>
                             <td><?php echo htmlspecialchars($row['recorder_id']); ?></td>
                             <td><?php echo htmlspecialchars($row['registered_at'] ?? 'N/A'); ?></td>
-                            <td><button id = "update_button"> Update </button></td>
+                            <td><a href="update.php?id=<?php echo htmlspecialchars($row['id']); ?>"><button type="button" id = "update_button"> Update </button></a></td>
                             <td>
                                 <form method="POST" action="backend/process_delete.php" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this record? This action cannot be undone.')">
                                     <input type="hidden" name="record_id" value="<?php echo htmlspecialchars($row['id']); ?>">
