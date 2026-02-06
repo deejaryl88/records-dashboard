@@ -105,3 +105,43 @@ h1 {
 .restore-button:hover {
     background: #218838;
 }
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e7e7ea;
+}
+
+.pagination-btn {
+    padding: 8px 14px;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+    border: none;
+    display: inline-block;
+}
+
+.pagination-btn:hover {
+    background: #5568d3;
+}
+
+.pagination-btn.disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}

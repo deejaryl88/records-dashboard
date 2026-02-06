@@ -21,18 +21,40 @@ require 'components/header.php';
         <?php endif; ?>
 
         <?php
+        $records_per_page = 10;
+        $current_page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
+        
         try {
+            // Get total count of records
+            $count_stmt = $pdo->query(
+                'SELECT COUNT(*) as total'
+                . ' FROM records r'
+                . ' WHERE r.deleted_at IS NULL'
+            );
+            $total_records = $count_stmt->fetch()['total'];
+            $total_pages = ceil($total_records / $records_per_page);
+            
+            // Ensure current page doesn't exceed total pages
+            if ($current_page > $total_pages && $total_pages > 0) {
+                $current_page = $total_pages;
+            }
+            
+            $offset = ($current_page - 1) * $records_per_page;
+            
             $stmt = $pdo->query(
                 'SELECT r.id, r.title, r.description, r.name, r.recorder_id, u.created_at AS registered_at'
                 . ' FROM records r'
                 . ' LEFT JOIN users u ON r.recorder_id = u.id'
                 . ' WHERE r.deleted_at IS NULL'
                 . ' ORDER BY r.id ASC'
+                . ' LIMIT ' . $records_per_page . ' OFFSET ' . $offset
             );
             $records = $stmt->fetchAll();
         } catch (Exception $e) {
             echo '<div class="error">Error fetching records.</div>';
             $records = [];
+            $total_records = 0;
+            $total_pages = 0;
         }
 
         if (empty($records)): ?>
@@ -71,6 +93,27 @@ require 'components/header.php';
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            
+            <!-- Pagination Controls -->
+            <div class="pagination">
+                <?php if ($current_page > 1): ?>
+                    <a href="?page=1" class="pagination-btn">« First</a>
+                    <a href="?page=<?php echo $current_page - 1; ?>" class="pagination-btn">← Previous</a>
+                <?php else: ?>
+                    <span class="pagination-btn disabled">« First</span>
+                    <span class="pagination-btn disabled">← Previous</span>
+                <?php endif; ?>
+                
+                <span class="pagination-info">Page <?php echo $current_page; ?> of <?php echo $total_pages; ?></span>
+                
+                <?php if ($current_page < $total_pages): ?>
+                    <a href="?page=<?php echo $current_page + 1; ?>" class="pagination-btn">Next →</a>
+                    <a href="?page=<?php echo $total_pages; ?>" class="pagination-btn">Last »</a>
+                <?php else: ?>
+                    <span class="pagination-btn disabled">Next →</span>
+                    <span class="pagination-btn disabled">Last »</span>
+                <?php endif; ?>
+            </div>
         <?php endif; ?>
     </div>
 </body>
